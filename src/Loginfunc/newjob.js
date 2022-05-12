@@ -51,13 +51,13 @@ fetch(url, {
  navigate('/managerPage');
 }
   return (
-    <Box component="form" sx={{   '& .MuiTextField-root': { m: 1, width: '25ch' },  }} noValidate autoComplete="off">
+    
     <div className="form" onSubmit={postjob}>
       <h1>Create new job</h1>
-     <form >
+      <Box component="form" sx={{   '& .MuiTextField-root': { m: 1, width: '25ch' },  }} noValidate autoComplete="off">
        <div className="input-container">
 
-         <TextField  id="outlined-required" label="Customer*" defaultValue="Customer" type="text" placeholder='Customer' name="customer" onChange={handlejob} value={job.customer} />
+         <TextField  id="outlined-required" label="Customer*"  type="text" placeholder='Customer' name="customer" onChange={handlejob} value={job.customer} />
          
        </div>
        <div className="input-container">
@@ -70,19 +70,19 @@ fetch(url, {
        </div>
        <div className="input-container">
 
-         <TextField  id="outlined-required" label="Location" defaultValue="Location" type="text" placeholder='Location' name="location"  onChange={handlejob} required value={job.location} />
+         <TextField  id="outlined-required" label="Location"  type="text" placeholder='Location' name="location"  onChange={handlejob} required value={job.location} />
        </div>
        <div className="input-container">
 
-         <TextField  id="outlined-required" label="Comments" defaultValue="Comments" type="text" placeholder='Comments' name="comments" onChange={handlejob} required value={job.comments} />
+         <TextField  id="outlined-required" label="Comments"  type="text" placeholder='Comments' name="comments" onChange={handlejob} required value={job.comments} />
        </div>
        <div className="button-container">
          <Button variant="contained" endIcon={<SendIcon />}  type="submit" >Create new Job</Button>
        </div>
 
-     </form>
+     </Box>
 
      </div>
-     </Box>
+    
   )
 }

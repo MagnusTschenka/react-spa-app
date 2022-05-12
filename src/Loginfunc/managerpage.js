@@ -29,6 +29,7 @@ export default function Managerpage() {
       <Button variant="contained" onClick={handlePage} name='deletemodel' value='/deletemodel'>Slet model fra job</Button>
       <br></br>
       <Button variant="contained" onClick={handlePage} name='seejob' value='/seejob'>Se job</Button>
+      
         </table>
       </div>
   )

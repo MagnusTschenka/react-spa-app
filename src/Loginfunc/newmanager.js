@@ -52,31 +52,30 @@ fetch(url, {
 }
   return (
 
-    <Box component="form"
-    sx={{
-      '& .MuiTextField-root': { m: 1, width: '25ch' },
-    }}
-    noValidate
-    autoComplete="off" className="form" onSubmit={postmanager}>
-      <h1>Create new manager</h1>
-     <form >
+   
+      
+      <Box component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off" className="form" onSubmit={postmanager}>
+         <h1>Create new manager</h1>
        <div className="input-container">
-         < TextField  id="outlined-required" label="First name*" defaultValue="First name" type="text" placeholder='First name' name="firstName" onChange={handlemanager} value={manager.firstName} />
+         < TextField  id="outlined-required" label="First name*"  type="text" placeholder='First name' name="firstName" onChange={handlemanager} value={manager.firstName} />
        </div>
        <div className="input-container">
-         <TextField  id="outlined-required" label="Last name*" defaultValue="'Last' name" type="text" placeholder='Last name' name="lastName"  onChange={handlemanager} value={manager.lastName} />
+         <TextField  id="outlined-required" label="Last name*"  type="text" placeholder='Last name' name="lastName"  onChange={handlemanager} value={manager.lastName} />
        </div>
        <div className="input-container">
-         <TextField  id="outlined-required" label="Email*" defaultValue="Email" type="text" placeholder='Email' name="email" onChange={handlemanager} value={manager.email} />
+         <TextField  id="outlined-required" label="Email*"  type="text" placeholder='Email' name="email" onChange={handlemanager} value={manager.email} />
        </div>
        <div className="input-container">
-         <TextField  id="outlined-required" label="Password" defaultValue="Password"  placeholder='Password' type="password" name="password"  onChange={handlemanager} required value={manager.password} />
+         <TextField  id="outlined-required" label="Password"   placeholder='Password' type="password" name="password"  onChange={handlemanager} required value={manager.password} />
        </div>
        <div className="button-container">
          <Button variant="contained" endIcon={<PersonAddAlt1Icon />} type="submit">Create new manager</Button>
        </div>
-
-     </form>
 
      </Box>
   )
@@ -84,10 +83,3 @@ fetch(url, {
 
 
  
-        <TextField
-          required
-          id="outlined-required"
-          label="Required"
-          defaultValue="Hello World"
-        />
-        
