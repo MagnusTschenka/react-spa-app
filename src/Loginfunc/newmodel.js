@@ -1,6 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
+import { style } from '@mui/system';
+import './style.css';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
 export default function Newmodel() {
@@ -57,82 +64,68 @@ fetch(url, {
  navigate('/managerPage');
 }
   return (
-    <div className="form" onSubmit={postmodel}>
+    <Box component="form" sx={{   '& .MuiTextField-root': { m: 1, width: '25ch' },  }} noValidate autoComplete="off">
+    <div className="formModel" onSubmit={postmodel}>
+      <h1>Create Model</h1>
      <form >
        <div className="input-container">
-         <label>First name </label>
-         <input type="text" name="firstName" required onChange={handlemodel} value={model.firstName} />
+         <TextField  id="outlined-required" label="First name*" defaultValue="First name" type="text" placeholder='First name' name="firstName" onChange={handlemodel} value={model.firstName} />
        </div>
        <div className="input-container">
-         <label>Last name </label>
-         <input type="text" name="lastName" required  onChange={handlemodel} value={model.lastName} />
+         <TextField  id="outlined-required" label="Last name*" defaultValue="Last name" type="text" placeholder='Last name' name="lastName" onChange={handlemodel} value={model.lastName} />
        </div>
        <div className="input-container">
-         <label>Email </label>
-         <input type="email" name="email" required onChange={handlemodel} value={model.email} />
+         <TextField  id="outlined-required" label="Email*" defaultValue="Email" type="text" placeholder='Email' name="email" onChange={handlemodel} value={model.email} />
        </div>
        <div className="input-container">
-         <label>PhoneNo </label>
-         <input type="text" name="phoneNo"  onChange={handlemodel} required value={model.phoneNo} />
+         <TextField  id="outlined-required" label="phoneNo" defaultValue="phoneNo" type="text" placeholder='phoneNo' name="phoneNo"  onChange={handlemodel} required value={model.phoneNo} />
        </div>
        <div className="input-container">
-         <label>AddressLine1 </label>
-         <input type="text" name="addressLine1"  onChange={handlemodel} required value={model.addressLine1} />
+         <TextField  id="outlined-required" label="adressline1"  type="text" placeholder='adressline1' name="addressLine1" onChange={handlemodel} required value={model.addressLine1} />
        </div>
        <div className="input-container">
-         <label>AddressLine2 </label>
-         <input type="text" name="addressLine2"  onChange={handlemodel} required value={model.addressLine2} />
+         <TextField  id="outlined-required" label="adressline2"  type="text" placeholder='adressline2' name="addressLine2" onChange={handlemodel} required value={model.addressLine2} />
        </div>
        <div className="input-container">
-         <label>Zip </label>
-         <input type="text" name="zip"  onChange={handlemodel} required value={model.zip} />
+         <TextField  id="outlined-required" label="zip" defaultValue="zip" type="text" placeholder='zip' name="zip"  onChange={handlemodel} required value={model.zip} />
        </div>
        <div className="input-container">
-         <label>City </label>
-         <input type="text" name="city"  onChange={handlemodel} required value={model.city} />
+         <TextField  id="outlined-required" label="city" defaultValue="city" type="text" placeholder='city' name="city" onChange={handlemodel} required value={model.city} />
        </div>
        <div className="input-container">
-         <label>Country </label>
-         <input type="text" name="country"  onChange={handlemodel} required value={model.country} />
+         <TextField  id="outlined-required" label="Country" defaultValue="Country" type="text" placeholder='Country' name="country" onChange={handlemodel} required value={model.country} />
        </div>
        <div className="input-container">
-         <label>BirthDate </label>
-         <input type="date" name="birthDate"  onChange={handlemodel} required value={model.birthDate} />
+         <TextField  id="outlined-required" label="Birth date" defaultValue="Birth date" type="text" placeholder='Birth date' name="birthDate"  onChange={handlemodel} required value={model.birthDate} />
        </div>
        <div className="input-container">
-         <label>nationality </label>
-         <input type="text" name="nationality"  onChange={handlemodel} required value={model.nationality} />
+         <TextField  id="outlined-required" label="nationality" defaultValue="nationality" type="text" placeholder='nationality' name="nationality" onChange={handlemodel} required value={model.nationality} />
        </div>
        <div className="input-container">
-         <label>height </label>
-         <input type="number" name="height"  onChange={handlemodel} required value={model.height} />
+         <TextField  id="outlined-required" label="height" defaultValue="height" type="number" placeholder='height' name="height" onChange={handlemodel} required value={model.height} />
        </div>
        <div className="input-container">
-         <label>shoeSize </label>
-         <input type="number" name="shoeSize"  onChange={handlemodel} required value={model.shoeSize} />
+         <TextField  id="outlined-required" label="shoeSize" defaultValue="shoeSize" type="number" placeholder='shoeSize' name="shoeSize"  onChange={handlemodel} required value={model.shoeSize} />
+         </div>
+       <div className="input-container">
+         <TextField  id="outlined-required" label="haircolor" defaultValue="" type="text" placeholder='haircolor' name="hairColor"  onChange={handlemodel} required value={model.hairColor} />
        </div>
        <div className="input-container">
-         <label>hairColor </label>
-         <input type="text" name="hairColor"  onChange={handlemodel} required value={model.hairColor} />
+         <TextField  id="outlined-required" label="eyeColor" defaultValue="eyeColor" type="text" placeholder='eyeColor' name="eyeColor" onChange={handlemodel} required value={model.eyeColor} />
        </div>
        <div className="input-container">
-         <label>eyeColor </label>
-         <input type="text" name="eyeColor"  onChange={handlemodel} required value={model.eyeColor} />
+         <TextField  id="outlined-required" label="comments" defaultValue="comments" type="text" placeholder='comments' name="comments"  onChange={handlemodel} required value={model.comments} />
        </div>
        <div className="input-container">
-         <label>comments </label>
-         <input type="text" name="comments"  onChange={handlemodel} required value={model.comments} />
-       </div>
-       <div className="input-container">
-         <label>password </label>
-         <input type="password" name="password"  onChange={handlemodel} required value={model.password} />
+         <TextField  id="outlined-required" label="password" defaultValue="password" type="password" placeholder='password' name="password"  onChange={handlemodel} required value={model.password} />
        </div>
        <div className="button-container">
-         <input type="submit" />
+         <Button variant="contained" endIcon={<SendIcon />} type="submit">Create Model</Button>
        </div>
 
      </form>
 
      </div>
+     </Box>
   )
 }

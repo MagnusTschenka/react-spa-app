@@ -1,0 +1,41 @@
+
+.signin
+{
+    text-align: center;
+    
+}
+.form {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 15%;
+    gap: 5em;
+  }
+
+  .formModel {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+
+
+  .margin-top {
+
+    margin-top: 10;
+  }
+
+.buttons
+  {
+
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  
+
+  }
+
+  .buttons button { 
+    width: 100%;
+  }

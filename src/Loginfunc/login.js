@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import jwt_decode from 'jwt-decode';
 import ReactDOM from "react-dom";
 import {useNavigate} from "react-router-dom";
-
+import { style } from '@mui/system';
+import './style.css';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 export function LoginForm() {
     const initialstate = {Email:'',
@@ -78,22 +84,29 @@ const handlePasswordChanged = (event) => {
         
     }
     return(
+        <Box component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off">
+            
         <div className="form" onSubmit={login}>
+        <h1 className="signin">Sign in</h1>
      <form >
        <div className="input-container">
-         <label>Username </label>
-         <input type="text" name="uname" required onChange={handleUsernameChanged} value={loginUser.Email} />
+         <TextField  id="outlined-required" label="Username*" defaultValue="Username" type="text" placeholder='Username' name="Username" onChange={handleUsernameChanged} value={loginUser.Email} />
        </div>
        <div className="input-container">
-         <label>Password </label>
-         <input type="password" name="pass"  onChange={handlePasswordChanged} required value={loginUser.Password} />
+         <TextField  id="outlined-required" label="Password" defaultValue="Password" type="password" placeholder='Password' name="Password" onChange={handlePasswordChanged} required value={loginUser.Password} />
        </div>
        <div className="button-container">
-         <input type="submit" />
+         <Button variant="contained" endIcon={<SendIcon />}  type="submit" onClick={login}>Login</Button>
        </div>
 
      </form>
 
      </div>
+     </Box>
     )
 }

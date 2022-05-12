@@ -1,7 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
-
+import { style } from '@mui/system';
+import './style.css';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 export default function Newjob() {
 
@@ -45,34 +51,38 @@ fetch(url, {
  navigate('/managerPage');
 }
   return (
+    <Box component="form" sx={{   '& .MuiTextField-root': { m: 1, width: '25ch' },  }} noValidate autoComplete="off">
     <div className="form" onSubmit={postjob}>
+      <h1>Create new job</h1>
      <form >
        <div className="input-container">
-         <label>Customer </label>
-         <input type="text" name="customer" required onChange={handlejob} value={job.customer} />
+
+         <TextField  id="outlined-required" label="Customer*" defaultValue="Customer" type="text" placeholder='Customer' name="customer" onChange={handlejob} value={job.customer} />
+         
        </div>
        <div className="input-container">
-         <label>StartDate </label>
-         <input type="date" name="startDate" required  onChange={handlejob} value={job.startDate} />
+
+         <TextField  id="outlined-required"   type="date" name="startDate" onChange={handlejob} value={job.startDate} />
        </div>
        <div className="input-container">
-         <label>Days </label>
-         <input type="number" name="days" required onChange={handlejob} value={job.days} />
+
+         <TextField  id="outlined-required" label="Days*" type="number" placeholder='Days' name="days" onChange={handlejob} value={job.days} />
        </div>
        <div className="input-container">
-         <label>Location </label>
-         <input type="text" name="location"  onChange={handlejob} required value={job.location} />
+
+         <TextField  id="outlined-required" label="Location" defaultValue="Location" type="text" placeholder='Location' name="location"  onChange={handlejob} required value={job.location} />
        </div>
        <div className="input-container">
-         <label>Comments </label>
-         <input type="text" name="comments"  onChange={handlejob} required value={job.comments} />
+
+         <TextField  id="outlined-required" label="Comments" defaultValue="Comments" type="text" placeholder='Comments' name="comments" onChange={handlejob} required value={job.comments} />
        </div>
        <div className="button-container">
-         <input type="submit" />
+         <Button variant="contained" endIcon={<SendIcon />}  type="submit" >Create new Job</Button>
        </div>
 
      </form>
 
      </div>
+     </Box>
   )
 }
