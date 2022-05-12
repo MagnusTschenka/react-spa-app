@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 
 export default function Newmanager() {
 
@@ -72,7 +73,7 @@ fetch(url, {
          <TextField  id="outlined-required" label="Password" defaultValue="Password"  placeholder='Password' type="password" name="password"  onChange={handlemanager} required value={manager.password} />
        </div>
        <div className="button-container">
-         <Button variant="contained" endIcon={<SendIcon />} type="submit">Create new manager</Button>
+         <Button variant="contained" endIcon={<PersonAddAlt1Icon />} type="submit">Create new manager</Button>
        </div>
 
      </form>

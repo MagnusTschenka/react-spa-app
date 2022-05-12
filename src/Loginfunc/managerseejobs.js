@@ -19,10 +19,11 @@ useEffect(() => {
          'Authorization': 'Bearer ' + localStorage.getItem("token"),
          'Content-Type': 'application/json'
          }
-         }).then(responseJson => {
-         this.response = responseJson;
+         }).then(async data => {
+          const jobs = await data.json();
+          setjobs(jobs);
          })
-         .then(data => setjobs(data))
+         
          .catch(error => alert('Something bad happened: ' + error));
         }    
     seejobs();
@@ -31,16 +32,20 @@ useEffect(() => {
 
 
 
-  
+ if(jobs.length === 0)
+ {
+   return <div>loading data</div>
+ } 
 
 return (
 
-    <div>
+    <div className='form'>
+      <h1>List of all Jobs</h1>
+      <table className='table'>
 
+        <ol>
 
-        <ul>
-
-          {jobs.map(j => (
+          {jobs.map((j,index) => (
 
               <li key={j.id}>  
                   {j.customer},
@@ -52,8 +57,8 @@ return (
 
           ))}
 
-        </ul>
-
+        </ol>
+        </table>
     </div>
 
   );

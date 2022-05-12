@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 
 
 export default function Newmodel() {
@@ -68,6 +69,7 @@ fetch(url, {
     <div className="formModel" onSubmit={postmodel}>
       <h1>Create Model</h1>
      <form >
+       <div>
        <div className="input-container">
          <TextField  id="outlined-required" label="First name*" defaultValue="First name" type="text" placeholder='First name' name="firstName" onChange={handlemodel} value={model.firstName} />
        </div>
@@ -85,6 +87,7 @@ fetch(url, {
        </div>
        <div className="input-container">
          <TextField  id="outlined-required" label="adressline2"  type="text" placeholder='adressline2' name="addressLine2" onChange={handlemodel} required value={model.addressLine2} />
+       </div>
        </div>
        <div className="input-container">
          <TextField  id="outlined-required" label="zip" defaultValue="zip" type="text" placeholder='zip' name="zip"  onChange={handlemodel} required value={model.zip} />
@@ -120,7 +123,7 @@ fetch(url, {
          <TextField  id="outlined-required" label="password" defaultValue="password" type="password" placeholder='password' name="password"  onChange={handlemodel} required value={model.password} />
        </div>
        <div className="button-container">
-         <Button variant="contained" endIcon={<SendIcon />} type="submit">Create Model</Button>
+         <Button variant="contained" endIcon={<PersonAddAlt1Icon/>} type="submit">Create Model</Button>
        </div>
 
      </form>

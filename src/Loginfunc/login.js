@@ -9,6 +9,8 @@ import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import KeyIcon from '@mui/icons-material/Key';
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 
 export function LoginForm() {
     const initialstate = {Email:'',
@@ -62,9 +64,10 @@ const handlePasswordChanged = (event) => {
                 let token = await response.json();
                 localStorage.setItem("token", token.jwt);
                 // Change view to some other component
-                
+                let decoded= jwt_decode(token.jwt);
+                localStorage.setItem("role",decoded);
                 navigate("/managerPage");
-                
+                console.log(localStorage.setItem("role",decoded));
                 // let url = "https://localhost:7181/api/account/login";
                 // let response = await fetch(url, {
                 //     method: "GET",
@@ -101,7 +104,7 @@ const handlePasswordChanged = (event) => {
          <TextField  id="outlined-required" label="Password" defaultValue="Password" type="password" placeholder='Password' name="Password" onChange={handlePasswordChanged} required value={loginUser.Password} />
        </div>
        <div className="button-container">
-         <Button variant="contained" endIcon={<SendIcon />}  type="submit" onClick={login}>Login</Button>
+         <Button variant="contained" endIcon={<KeyIcon />}  type="submit" onClick={login}>Login</Button>
        </div>
 
      </form>

@@ -39,3 +39,10 @@
   .buttons button { 
     width: 100%;
   }
+
+  .table{
+   background-color: #CCFFFF;
+    border: 1px solid #999;
+  padding: 1rem;
+  text-align: left;
+  }
