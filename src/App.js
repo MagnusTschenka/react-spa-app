@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { LoginForm } from './Loginfunc/login';
+import Newmodel from './Loginfunc/newmodel';
+import Managerpage from './Loginfunc/managerpage';
+import Newmanager from './Loginfunc/newmanager';
+import Newjob from './Loginfunc/newjob';
+import Managerseejobs from './Loginfunc/managerseejobs';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+  } from "react-router-dom";
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Manager></Manager>
+    <Router>
+    <Routes>
+    <Route path="/loginform" element={<LoginForm></LoginForm>} />
+    <Route path="/newmodel" element={<Newmodel></Newmodel>} />
+    <Route path="/managerPage" element={<Managerpage></Managerpage>}/>
+    <Route path="/newmanager" element={<Newmanager></Newmanager>}/>
+    <Route path="/newjob" element={<Newjob></Newjob>}/>
+    <Route path="/managerseejobs" element={<Managerseejobs></Managerseejobs>}/>
+    </Routes>
+    </Router>
   );
 }
 
