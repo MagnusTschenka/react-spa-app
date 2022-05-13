@@ -31,7 +31,8 @@ export default function Deletemodel() {
 
 
     async function deletemodelfromjob(){
-      var url = "https://localhost:7181/api/Jobs/"+ initialstate.jobId +"/model/"+ initialstate.modelId;
+      var url = "https://localhost:7181/api/Jobs/"+ modeltodeletefromjob.jobId +"/model/"+ modeltodeletefromjob.modelId;
+      console.log(url);
       fetch(url, {
        method: 'DELETE', // Or DELETE
        credentials: 'include',

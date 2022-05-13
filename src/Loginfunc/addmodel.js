@@ -37,7 +37,7 @@ export default function Addmodel() {
     var url = "https://localhost:7181/api/Jobs/"+ modeltojob.jobId +"/model/" + modeltojob.modelId;
     console.log(url);
     fetch(url, {
-     method: 'PUT', // Or PUT
+     method: 'POST', // Or PUT
      body: JSON.stringify(), // assumes your data is in a
      // form object on your instance.
      credentials: 'include',

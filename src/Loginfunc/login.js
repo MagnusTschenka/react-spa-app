@@ -35,20 +35,7 @@ const handlePasswordChanged = (event) => {
 };
 
 
-    // function handleInputChange(event) {
-    //     let userName2 = event.userName;
-    //     let userPass = event.userPass;
-
-    //     setloginUser(loginUser => {
-    //         return {
-    //           ...loginUser,
-    //           [userName]: loginUser,
-    //         //   [loginUser.userPass]: userPass
-            
-    //     };
-
-//     });
-// }
+   
     async function login(e) {
         e.preventDefault();
         let url = "https://localhost:7181/api/account/login";
@@ -65,18 +52,18 @@ const handlePasswordChanged = (event) => {
                 localStorage.setItem("token", token.jwt);
                 // Change view to some other component
                 let decoded= jwt_decode(token.jwt);
-                localStorage.setItem("role",decoded);
-                navigate("/managerPage");
-                console.log(localStorage.setItem("role",decoded));
-                // let url = "https://localhost:7181/api/account/login";
-                // let response = await fetch(url, {
-                //     method: "GET",
-                //     body: JSON.stringify(loginUser), // Assumes data is in an object called form
-                //     headers: new Headers({
-                //         "Content-Type": "application/json"
-                //     })
-                // });
-                // ...
+              //  localStorage.setItem("ModelId",decoded);
+           
+
+                if (decoded.ModelId === '-1') {
+                    navigate("/managerPage");
+                    console.log("Hej");
+                }
+                else if (decoded.ModelId >= '0') {
+                    navigate("/modelPage");
+                    
+                }
+              
             } else {
                 alert("Server returned: " + response.statusText);
             }

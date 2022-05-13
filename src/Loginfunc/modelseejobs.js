@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
-
+import jwt_decode from 'jwt-decode';
 
 export default function Modelseejobs() {
 
@@ -10,9 +10,10 @@ const [jobs, setjobs] = useState([]);
 let navigate = useNavigate();
 
 useEffect(() => {
-    async function seejobs(e) {
-        e.preventDefault();
-        var url = "https://localhost:7181/api/Models/" + '1' + "/jobs";
+    async function seejobs() {
+      
+       var url = "https://localhost:7181/api/Jobs";
+        console.log(url);
         fetch(url, {
          method: 'GET', // Or DELETE
          credentials: 'include',
@@ -23,6 +24,7 @@ useEffect(() => {
          }).then(async data => {
           const jobs = await data.json();
           setjobs(jobs);
+         
          })
          
          .catch(error => alert('Something bad happened: ' + error));
